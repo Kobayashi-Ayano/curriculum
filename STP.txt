@@ -1,0 +1,32 @@
+問１　ブリッジプライオリティの値が最も小さいswitch3がルートブリッジとなる。
+問２　switch1の右側がDP、下側がRP
+　　　switch2の左側がRP、下側がBP
+　　　switch3の上側がDP、右側がDP
+　　　switch4の左側がRP、上側がDP
+
+switch1-2間のケーブルは100Mbps→パスコスト19
+switch2-4間のケーブルは10Mbps→パスコスト100
+switch1-3間のケーブルは10Mbps→パスコスト100
+switch3-4間のケーブルは10Mbps→パスコスト100
+
+switch1について考える
+①switch1-3:100
+②switch1-2-4-3：219
+①のほうが小さいため、switch1の下側がRP
+
+switch2について考える
+①switch2-switch1-switch3:119
+②switch2-4-3:200
+①のほうが小さいため、switch2の左側がRP
+
+switch4について考える
+①switch4-3:100
+②switch4-2-1-3:219
+①のほうが小さいため、switch4の左側がRP
+
+対向ポートとなるswitch1の右側とルートブリッジであるswitch3のポート両方がDP
+
+switch2-4間において、ブリッジIDが小さいswitch4の上側がDPとなる。
+残ったswitch2の下側がBP
+
+
